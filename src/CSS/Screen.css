@@ -1,0 +1,45 @@
+.screenContainer {
+  background-color: white;
+  height: -webkit-fill-available;
+  text-align: center;
+
+
+}
+
+.outerBox{
+  background: aqua;
+  height: 68vh;
+  width: 89vw;
+  display: inline-block;
+  margin-top: 15vh;
+
+}
+
+.screen{
+  background: red;
+  height: 52vh;
+  width: 71vw;
+  text-align: center;
+  display: inline-block;
+  top: 8vh;
+  position: relative;
+}
+.description{
+  background: purple;
+  height: 29vh;
+  width: 71vw;
+}
+.choiceA{
+  background: green;
+  height: 18vh;
+  width: 29vw;
+  float: left;
+
+}
+.choiceB{
+  background: orange;
+  height: 18vh;
+  width: 29vw;
+  float: right;
+
+}
