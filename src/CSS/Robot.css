@@ -1,0 +1,381 @@
+.robot-pic{
+  height: 6vw;
+
+
+}
+
+.robot-div{
+  display: table;
+  position: relative;
+    top: -42vw;
+
+}
+.show{
+  display: table;
+    top: 0vw;
+
+}
+
+.check{
+  width: 4vw;
+  top: -.3vw;
+  position: relative;
+  height: 4vw;
+}
+
+.checkbox{
+  width: 4vw;
+  position: relative;
+  background-image: url("https://clipart.info/images/ccovers/1484942349ios-emoji-white-question-mark-ornament.png");
+  height: 3.6vw;
+  background-size: contain;
+  top: -0.3vw;
+  display: -webkit-inline-box;
+  left: 40%;
+
+}
+/*
+.check-true{
+  position: relative;
+      background-image: url(/static/media/check.bd41593c.png);
+      height: 3.6vw;
+      background-size: contain;
+      background-color: transparent;
+      display: inline-flex; */
+
+/* } */
+
+.ex{
+  width: 5vw;
+  top: 1.4vw;
+  position: relative;
+  top: 0.3vw;
+  height: 3vw;
+
+}
+
+
+.exed{
+  width: 5vw;
+  top: 8vw;
+  z-index: 2;
+  left: 17vw;  position: relative;
+  height: 3vw;
+  z-index: 5;
+
+
+}
+.exed2{
+  width: 5vw;
+  top: 4vw;
+  z-index: 4;
+  left: -23vw;
+  position: relative;
+  height: 3vw;
+  z-index: 6
+
+
+}
+
+
+
+ .checked{
+   display: inline;
+text-align: center;
+font-size: 1.5vw;
+
+}
+
+.robotlist{
+  display: flex;
+  overflow: scroll;
+  border-style: inset;
+  margin: 2vw;
+  border-color: green;
+  width: 70vw;
+  left: -2vw;
+  position: relative;
+  top: -8vw;
+}
+
+.robotHead{
+  margin-left: 7.5vw;
+  width: 16vw;
+  height: 20vw;
+}
+
+.question{
+  font-size: 3vw;
+  position: absolute;
+  top: -9vw;
+}
+
+.choices{
+  display: -webkit-flex;
+  display: flex;
+  width: 20vw;
+  height: 100%;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  top: -5vw;
+  /* background: blue; */
+  float: left;
+  left: 0vw;
+
+}
+
+.choice{
+  width: 9vw;
+  height: 4vw;
+  text-align: center;
+  }
+
+  .wrap{
+    height: 9vw;
+    width: 10vw;
+    margin-top: 2vw;
+
+  }
+
+
+
+
+.choice{
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #111845a6;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  color: white;
+  padding: 20px;
+  z-index: 3;
+  position: relative;
+
+
+}
+
+
+.choice span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+.choice span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.choice span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.choice span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.choice span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.choice span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 2px;
+  background: #50dfdb;
+  animation: animate 1.5s linear infinite;
+}
+
+
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+
+  }
+
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+
+  }
+
+
+}
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.choice .left{
+    z-index: -5;
+    left: -2vw;
+        top: 4vw;
+    
+}
+
+.choice .right{
+    z-index: -5;
+    left: 2vw;
+        top: -3vw;
+
+}
+
+.choice .top{
+    z-index: -5;
+  left: -6vw;
+
+}
+.choice .bottom{
+  left: 6vw;
+  z-index: -5;
+
+}
+
+
+.rightArrow{
+  position: absolute;
+    height: 4vw;
+    left: 78vw;
+    top: 13vw;
+}
+
+.leftArrow{
+  position: absolute;
+    height: 4vw;
+    left: 1vw;
+    top: 13vw;
+}
+
+.bots{
+  display: unset;
+  overflow: scroll;
+  border-style: inset;
+  margin: 2vw;
+  border-color: green;
+  width: 76vw;
+  height: 66vw;
+}
+
+.color{
+  background: transparent;
+  width: 12vw;
+  height: 6vw;
+  position: relative;
+  top: 5vw;
+  left: -4vw;
+  z-index: 4;
+}
+
+
+.color2{
+  background: transparent;
+  height: 6vw;
+  position: relative;
+  z-index: 4;
+  left: 37vw;
+  background: red;
+  top: 18vw;
+  width: 19vw;
+
+}
+
+
+
+.rob{
+  display: inline-grid;
+  font-size: 1.5vw;
+  text-align: center;
+
+}
+
+.pic{
+  width: 10vw;
+overflow: hidden;
+text-align: center;
+}
+
+.undo{
+  top: -4vw;
+position: relative;
+left: -2vw;
+
+}
+
+#undo{
+  top: 5vw;
+left: 5vw;
+text-align: -webkit-center;
+
+}
+
+p{
+  font-size: 2vw;
+
+}
+
+#choosen{
+  top: 15vw;
+left: 47vw;
+width: 19vw;
+text-align: -webkit-right;
+height: 5vw;
+}
+
+#retry{
+  top: 17vw;
+  left: 7vw;
+  width: 32vw;
+  text-align: center;
+  height: 8vw;
+}
+
+.goBack{
+  position: relative;
+top: -3vw;
+left: 5vw;
+text-align: -webkit-center;
+}
+
+#redo{
+  left: 45vw;
+top: 7vw;
+w: ;
+top: 9vw;
+width: 20vw;
+height: 8vw;
+}
+
+.guess{
+  position: relative;
+top: -3vw;
+}

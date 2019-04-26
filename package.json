@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.4.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-glitch-effect": "^1.0.4",
+    "react-scripts": "2.1.8",
+    "react-typed": "^1.1.1",
+    "react-typist": "^2.0.5",
+    "typed.js": "^2.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
