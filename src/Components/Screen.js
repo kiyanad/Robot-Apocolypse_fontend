@@ -13,7 +13,7 @@ import Robot from './Robot'
 class Screen extends Component {
 state = {
   string:[],
-  change: true
+  change: false
 }
 
 componentDidUpdate(prevProps) {

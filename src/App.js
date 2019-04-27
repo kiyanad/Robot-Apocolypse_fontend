@@ -5,6 +5,8 @@ import Popup from './Components/Popup'
 
 import Typed from 'react-typed';
 import Typist from 'react-typist';
+import fetch from 'isomorphic-fetch'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 
 
@@ -33,13 +35,13 @@ class App extends Component {
 // INITIAL FETCH TO GET ROBOTS AND CHOICES //
   componentDidMount(){
     // debugger
-    fetch("http://localhost:3000/api/v1/choices")
+    fetch(`https://robot-apocolypse-backend.herokuapp.com/api/v1/choices`)
       .then(res => res.json())
       .then(choices => this.setState({
         choices: choices.choice
       }))
 
-      fetch("http://localhost:3000/api/v1/robots")
+      fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/robots")
         .then(res => res.json())
         .then(robots => this.setState({
           robots: robots.robot,
@@ -50,13 +52,13 @@ class App extends Component {
 // CHECKS IF THE ROBOTS HAVE BEEN SAVED TO STATE THEN SAVING RANDOM BOT TO VAR //
   componentDidUpdate(prevState){
     debugger
-    // fetch("http://localhost:3000/api/v1/choices")
+    // fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/choices")
     //   .then(res => res.json())
     //   .then(choices => this.setState({
     //     choices: choices.choice
     //   }))
     //
-    //   fetch("http://localhost:3000/api/v1/robots")
+    //   fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/robots")
     //     .then(res => res.json())
     //     .then(robots => this.setState({
     //       robots: robots.robot,
@@ -73,13 +75,13 @@ class App extends Component {
         // if(prevState.retry !== undefined){
         if(this.state.retry){
           debugger
-          fetch("http://localhost:3000/api/v1/choices")
+          fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/choices")
             .then(res => res.json())
             .then(choices => this.setState({
               choices: choices.choice
             }))
 
-            fetch("http://localhost:3000/api/v1/robots")
+            fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/robots")
               .then(res => res.json())
               .then(robots => this.setState({
                 robots: robots.robot,
@@ -1762,7 +1764,7 @@ this.unclicked()
   render() {
     // debugger
 
-    console.log(this.state.robot);
+    console.log(this.state.choices);
     // console.log(this.state.newrobots)
 
     return (
