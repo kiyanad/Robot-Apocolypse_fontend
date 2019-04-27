@@ -548,10 +548,36 @@ position: relative;
 body{
   height: 46vw;
 
+
 }
 
 .choiceC{
   top: 9vw;
+
+}
+}
+
+@media (orientation:portrait){
+  body{
+    -webkit-transform: rotate(90deg);
+
+-moz-transform: rotate(90deg);
+
+-o-transform: rotate(90deg);
+
+-ms-transform: rotate(90deg);
+
+transform: rotate(90deg);
+  }
+  .tv {
+    height: 92vw;
+    top: -26vw;
+    left: 29vw;
+    width: 204vw;
+    font-size: 2vw;
+}
+p{
+  font-size: 4vw;
 
 }
 }
