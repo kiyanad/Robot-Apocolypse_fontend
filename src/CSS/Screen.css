@@ -527,3 +527,31 @@ position: relative;
 top: -4vw;
 position: relative;
 }
+
+@media (max-width: 900px){
+
+
+.tv{
+  height: 37vw;
+
+}
+
+.choiceA{
+  top: 10vw;
+
+}
+.choiceB{
+  top: 10vw;
+
+}
+
+body{
+  height: 46vw;
+
+}
+
+.choiceC{
+  top: 9vw;
+
+}
+}

@@ -105,7 +105,7 @@ const choices = options.map(option => <Quiz choice = {option.choice} index={opti
           <div className="pop"><Instruction clicked={this.clicked}/> </div> : null}
         {this.props.robot?
           <div className="robot-div">
-          <p> {this.state.length} </p>
+          <p className="length"> {this.state.length} </p>
 
             <p className="question">
               Can I...

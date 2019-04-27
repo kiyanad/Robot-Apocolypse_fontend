@@ -240,7 +240,7 @@ font-size: 1.5vw;
     z-index: -5;
     left: -2vw;
         top: 4vw;
-    
+
 }
 
 .choice .right{
@@ -303,7 +303,6 @@ font-size: 1.5vw;
   position: relative;
   z-index: 4;
   left: 37vw;
-  background: red;
   top: 18vw;
   width: 19vw;
 
@@ -378,4 +377,63 @@ height: 8vw;
 .guess{
   position: relative;
 top: -3vw;
+}
+
+
+@media (max-width: 900px){
+  .bots {
+    display: unset;
+    overflow: scroll;
+    border-style: inset;
+    margin: 2vw;
+    border-color: green;
+    width: 66vw;
+    height: 33vw;
+
+  }
+
+  .wrap {
+    height: 9vw;
+    width: 10vw;
+    margin-top: -3vw;
+}
+.question {
+    font-size: 2vw;
+    position: absolute;
+    top: -10vw;
+    left: -6vw;
+}
+.length{
+  position: relative;
+top: -7vw;
+left: 18vw;
+}
+.choices{
+  top: -12vw;
+
+}
+
+.popup{
+  left: 64vw;
+top: 20vw;
+}
+
+.popup2{
+  left: 53vw;
+  top: 13vw;
+}
+
+.exed{
+  top: 3vw;
+left: 33vw;
+}
+
+.exed2{
+  top: -5vw;
+  left: -21vw;
+}
+
+#choosen{
+  height: 9vw
+}
 }

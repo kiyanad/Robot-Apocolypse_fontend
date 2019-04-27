@@ -12,7 +12,7 @@ import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 class App extends Component {
   state = {
-    gameStarted: true,
+    gameStarted: false,
     prompt: "Go to bed early or Stay Up all night?",
     choiceA: "Go to bed early",
     choiceB: "Stay up all night",
@@ -28,7 +28,8 @@ class App extends Component {
     bot: {id: 12804, name:"ZW-3", hear:true , see: false , arms: false,  speed:true , wheels: true , jump: true , doors: false, stairs: false, talk: false ,  laser: false, heat: true, gas: true, robothead: "95"},
     win: false,
     lose:false,
-    turn: 5
+    playerturn: 5,
+    over: false
 
   }
 
@@ -73,6 +74,7 @@ class App extends Component {
           }
         }
         // if(prevState.retry !== undefined){
+        if(this.state.playerturn !== 0 && this.state.playerturn !== null){
         if(this.state.retry){
           debugger
           fetch("https://robot-apocolypse-backend.herokuapp.com/api/v1/choices")
@@ -88,16 +90,27 @@ class App extends Component {
                 newrobots: robots.robot
               }))
               this.setState({
-                turn: this.state.turn - 1,
+                playerturn: this.state.playerturn - 1,
                 retry: false
               })
         }
         else if(this.state.redo){
+          debugger
           this.setState({
-            turn: this.state.turn - 1,
+            playerturn: this.state.playerturn - 1,
             redo: false
           })
     }
+  }
+  else if (this.state.playerturn == 0){
+    this.setState({
+      over: true,
+      redo:false,
+      retry: false,
+      playerturn: null
+    })
+  }
+
 
 }
       // }
@@ -140,15 +153,7 @@ debugger
           })
         }
 
-        if(this.state.route !== "none" && newPath.choiceA == "Captured"){
-          debugger
-  this.setState({
-    prompt: newPath.prompt,
-    choiceA: newPath.choiceA,
-    choiceB:newPath.choiceB,
-    turn: this.state.turn + 1,
-  })
-}
+
 
 
 ////////////////// IF IT IS NOT YOUR FIRST TURN //////////////////
@@ -623,6 +628,17 @@ if(rightPath !== undefined){
     debugger
   }
 
+  if(this.state.route !== "none" && newPath.choiceA == "Captured"){
+    debugger
+this.setState({
+  prompt: newPath.prompt,
+  choiceA: null,
+  choiceB:null,
+  turn: this.state.turn + 1,
+  choiceC: "Captured"
+})
+}
+
   }
 }
 
@@ -662,18 +678,7 @@ debugger
         })
 }
 
-if(this.state.route !== "none" && newPath.choiceA == "Captured"){
-  debugger
-this.setState({
-  prompt: newPath.prompt,
-  choiceA: null,
-  choiceB:null,
-  turn: this.state.turn + 1,
-  choiceC: "Captured"
 
-
-})
-}
 
 
 
@@ -1503,7 +1508,18 @@ if(this.state.choiceB == "Move out the way" && this.state.robot.heat ){
   })
 }
 
+if(this.state.route !== "none" && newPath.choiceA == "Captured"){
+  debugger
+this.setState({
+  prompt: newPath.prompt,
+  choiceA: null,
+  choiceB:null,
+  turn: this.state.turn + 1,
+  choiceC: "Captured"
 
+
+})
+}
 
       }
   }
@@ -1682,7 +1698,8 @@ console.log(newList);
 }
 
   clicked = (e) => {
-    if(e.target.parentElement.parentElement.classList.contains("show")){
+    debugger
+    if(e.target.parentElement.parentElement.classList.contains("show") || e.target.parentElement.parentElement.parentElement.classList.contains("show")){
       const selected = this.state.robots.find(robot => robot.name == e.target.id)
       const choosen = document.querySelector(".popup-hidder")
       choosen.style.visibility = "hidden"
@@ -1714,7 +1731,7 @@ unclicked = () => {
 
 choosen = (robot) => {
   console.log(robot);
-  let bot = this.state.bot
+  let bot = this.state.robot
   if(robot.id == bot.id){
 this.setState({
   win: true
@@ -1743,7 +1760,7 @@ retry = () => {
     choiceC: "",
     newrobots: [],
     choosen: null,
-    bot: this.state.bot,
+    bot: this.state.robot,
     win: false,
     lose:false,
     retry: true,
@@ -1764,21 +1781,21 @@ this.unclicked()
   render() {
     // debugger
 
-    console.log(this.state.choices);
-    // console.log(this.state.newrobots)
+    console.log(this.state.playerturn);
+    console.log(this.state.robot)
 
     return (
       <div>
       {(this.state.gameStarted && this.state.robot) || this.state.retry?
         <div>
+        {this.state.over? <p> Sorry no more lives </p> :
+          <div>
         {this.state.win? <p> Congrats You Win!!! </p>:
           <div>
-        <div className="popup-hidder"><Popup robot={this.state.choosen} clicked={this.clicked} selected={this.choosen} lost={this.state.lose} retry={this.retry} redo={this.redo} turn={this.state.turn}/> </div>
- <Screen robot={this.state.robot} prompt={this.state.prompt} choiceA={this.state.choiceA} choiceB={this.state.choiceB} choiceC={this.state.choiceC} changePath={this.changePath} robots={this.state.newrobots} checked={this.checked} clicked={this.clicked} unclicked={this.unclicked} retry={this.state.retry} turn={this.state.turn}/> </div> }  </div>  :
+        <div className="popup-hidder"><Popup robot={this.state.choosen} clicked={this.clicked} selected={this.choosen} lost={this.state.lose} retry={this.retry} redo={this.redo} turn={this.state.playerturn}/> </div>
+ <Screen robot={this.state.robot} prompt={this.state.prompt} choiceA={this.state.choiceA} choiceB={this.state.choiceB} choiceC={this.state.choiceC} changePath={this.changePath} robots={this.state.newrobots} checked={this.checked} clicked={this.clicked} unclicked={this.unclicked} retry={this.state.retry} turn={this.state.playerturn}/> </div> } </div> }</div>  :
       <div className="tv">
       <button className="skip" onClick={this.goToScreen}> Skip Intro </button>
-
-  		The year is 3080 and robots have risen up and created their own planet..
 
   <p>
   <Typist>
