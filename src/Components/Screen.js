@@ -21,11 +21,13 @@ componentDidUpdate(prevProps) {
   if (this.props.prompt !== prevProps.prompt) {
     // debugger
 const desc = document.querySelector(".description")
-
+debugger
+if(desc !== null){
 desc.innerHTML =` <p className="font">
       ${this.props.prompt}
     </p>`
   }
+}
   if(this.props.retry !== prevProps.retry){
     this.setState({
       change: false

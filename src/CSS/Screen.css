@@ -555,6 +555,7 @@ body{
   top: 9vw;
 
 }
+
 }
 
 @media (orientation:portrait){
@@ -578,6 +579,26 @@ transform: rotate(90deg);
 }
 p{
   font-size: 4vw;
+
+}
+
+}
+@media (max-width: 700px){
+
+.skip{
+  height: 6vw;
+
+}
+.tv{
+  height: 48vw;
+
+}
+.choiceA{
+  top: 17vw;
+
+}
+.choiceB{
+  top: 17vw;
 
 }
 }

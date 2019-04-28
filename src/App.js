@@ -1574,7 +1574,7 @@ this.setState({
       if (typer == "hear") {
         // debugger
         let hear = document.getElementById(`hear`)
-        hear.style.backgroundColor = "yellow"
+        hear.style.backgroundColor = "green"
 
       let newList = this.state.newrobots.filter(robot => robot.hear == true)
       // debugger
@@ -1585,6 +1585,8 @@ this.setState({
     }
 
     if (typer == "see") {
+      let hear = document.getElementById(`see`)
+      hear.style.backgroundColor = "green"
     let newList = robots.filter(robot => robot.see == true)
     // debugger
     this.setState({
@@ -1593,6 +1595,8 @@ this.setState({
   console.log(newList);
   }
   if (typer == "arms") {
+    let hear = document.getElementById(`arms`)
+    hear.style.backgroundColor = "green"
   const newList = this.state.newrobots.filter(robot => robot.arms == true)
   this.setState({
     newrobots: newList
@@ -1600,6 +1604,8 @@ this.setState({
 console.log(newList);
 }
 if (typer == "wheels") {
+  let hear = document.getElementById(`wheels`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.wheels == true)
 this.setState({
   newrobots: newList
@@ -1607,6 +1613,8 @@ this.setState({
 console.log(newList);
 }
 if (typer == "speed") {
+  let hear = document.getElementById(`speed`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.speed == true)
 this.setState({
   newrobots: newList
@@ -1614,6 +1622,8 @@ this.setState({
 console.log(newList);
 }
 if (typer == "jump") {
+  let hear = document.getElementById(`jump`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.jump == true)
 this.setState({
   newrobots: newList
@@ -1622,6 +1632,8 @@ console.log(newList);
 }
 
 if (typer == "doors") {
+  let hear = document.getElementById(`doors`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.doors == true)
 this.setState({
   newrobots: newList
@@ -1630,6 +1642,8 @@ console.log(newList);
 }
 
 if (typer == "stairs") {
+  let hear = document.getElementById(`stairs`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.stairs == true)
 this.setState({
   newrobots: newList
@@ -1638,6 +1652,8 @@ console.log(newList);
 }
 
 if (typer == "heat") {
+  let hear = document.getElementById(`heat`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.heat == true)
 this.setState({
   newrobots: newList
@@ -1646,8 +1662,8 @@ console.log(newList);
 }
 
 if (typer == "laser") {
-  let heat = document.getElementById(`heat`)
-  heat.style.backgroundColor = "red"
+  let heat = document.getElementById(`laser`)
+  heat.style.backgroundColor = "green"
 // debugger
 const newList = this.state.newrobots.filter(robot => robot.laser == true)
 
@@ -1657,15 +1673,10 @@ this.setState({
 console.log(newList);
 }
 
-if (typer == "heat") {
-const newList = this.state.newrobots.filter(robot => robot.heat == true)
-this.setState({
-  newrobots: newList
-})
-console.log(newList);
-}
 
 if (typer == "gas") {
+  let hear = document.getElementById(`gas`)
+  hear.style.backgroundColor = "green"
 const newList = this.state.newrobots.filter(robot => robot.gas == true)
 this.setState({
   newrobots: newList
@@ -1764,7 +1775,7 @@ retry = () => {
     choices:[],
     alarm: false,
     robots: null,
-    robot: null,
+    robot: this.state.robot,
     choiceC: "",
     newrobots: [],
     choosen: null,

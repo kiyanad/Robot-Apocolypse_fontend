@@ -436,4 +436,27 @@ left: 33vw;
 #choosen{
   height: 9vw
 }
+.checked{
+  font-size: 1.2vw;
+
+}
+}
+
+@media (max-width: 700px){
+
+.robotlist{
+width: 68vw;
+}
+#retry{
+  top: 17vw;
+height: 10vw;
+}
+#redo{
+  height: 15vw;
+
+}
+.popup-container{
+  left: 3vw;
+
+}
 }
