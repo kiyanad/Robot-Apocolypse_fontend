@@ -1544,8 +1544,11 @@ this.setState({
             //   clicked: false
             // })
           }
+
           if(e.target.nextElementSibling.classList.contains("check-true") == false) {
         // let pick = event.target.innerText
+        let choosen = document.getElementById(`${pick}`)
+        
         if (choosen !== null){
         choosen.style.backgroundColor = "rgba(30, 130, 76, 1)"
         // debugger
