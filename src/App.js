@@ -1546,13 +1546,14 @@ this.setState({
           }
           if(e.target.nextElementSibling.classList.contains("check-true") == false) {
         // let pick = event.target.innerText
+        if (choosen !== null){
         choosen.style.backgroundColor = "rgba(30, 130, 76, 1)"
         // debugger
         this.setState({
           clicked: true
         })
       }
-
+}
       const checkbox = e.target.nextElementSibling
     checkbox.classList.toggle("check-true");
     const type = ["hear","stairs", "doors", "arms", "speed"]
