@@ -498,7 +498,7 @@ if(rightPath !== undefined){
   else {
     const rightPath = newerPath.find(choice => choice.robotpath == "a")
     debugger
-
+if(rightPath !== undefined){
     this.setState({
       prompt: rightPath.prompt,
       choiceA: rightPath.choiceA,
@@ -506,6 +506,7 @@ if(rightPath !== undefined){
       turn: this.state.turn + 1,
       route: "a"
       })
+    }
     }
   }
 }
@@ -1548,7 +1549,7 @@ this.setState({
           if(e.target.nextElementSibling.classList.contains("check-true") == false) {
         // let pick = event.target.innerText
         let choosen = document.getElementById(`${pick}`)
-        
+
         if (choosen !== null){
         choosen.style.backgroundColor = "rgba(30, 130, 76, 1)"
         // debugger
@@ -1572,6 +1573,9 @@ this.setState({
       // debugger
       if (typer == "hear") {
         // debugger
+        let hear = document.getElementById(`hear`)
+        hear.style.backgroundColor = yellow
+
       let newList = this.state.newrobots.filter(robot => robot.hear == true)
       // debugger
       this.setState({
