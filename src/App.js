@@ -1574,7 +1574,7 @@ this.setState({
       if (typer == "hear") {
         // debugger
         let hear = document.getElementById(`hear`)
-        hear.style.backgroundColor = yellow
+        hear.style.backgroundColor = "yellow"
 
       let newList = this.state.newrobots.filter(robot => robot.hear == true)
       // debugger
